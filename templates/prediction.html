@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="with=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>Prediction</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='style_prediction.css')}}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/17c067ba5f.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="center">
+         <div class="container">
+            <a class="close-btn fas fa-times" title="close" href={{url_for('index')}}></a>
+            <div class="text">
+               Prediction
+            </div>
+            <form action="{{ url_for("prediction")}}" method="post">
+               <div class="data">
+                  <label>Question:1</label>
+                  <input name='question1' type="text" required>
+               </div>
+               <div class="algo">
+               <label for="algos">Feacture Extraction:</label>
+                     <select name="nlp_fet">
+                         <option value="bow">Bag of Words</option>
+                         <option value="tfidf">TFIDF</option>
+
+                     </select>
+               </div>
+               <div class="data">
+                  <label>Question:2</label>
+                  <input name='question2' type="text" required>
+               </div>
+               <div class="algo">
+               <label>ML Algorithm:</label>
+                     <select name="ml_algo">
+                        <option value="random_forest">Random Forest</option>
+                         <option value="decision_tree">Decision Tree</option>
+                         <option value="logistic_regression">Logistic Regression</option>
+                         <option value="naive_bayes">Naive Bayes</option>
+                     </select>
+               </div>
+               <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit">Prediction</button>
+               </div>
+               <div class="accuracy" id="acc">
+                  <label>Accuracy:</label>
+                  <label id="accuracy">{{acc}}%</label>
+               </div>
+               <div class="accuracy" id="prec">
+                  <label>Precision: </label>
+                  <label id="precision">{{prec}}%</label>
+               </div>
+               <div class="accuracy" id="rec">
+                  <label>Recall:</label>
+                  <label id="recall">{{rec}}%</label>
+               </div>
+               <div class="accuracy" id="f1">
+                  <label>F1 Score:</label>
+                  <label id="f1score">{{f1score}}%</label>
+               </div>
+               <div id="res">
+                  <label>Result:</label><br>
+                  <lebel id="result">{{result}}</lebel>
+               </div>
+
+            </form>
+         </div>
+      </div>
+   </body>
+</html>

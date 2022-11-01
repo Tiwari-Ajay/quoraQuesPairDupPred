@@ -1,0 +1,10 @@
+# Working file explanation
+--> It is the flask Web Application
+-->File Used:
+      #application.py -->main file for running the project
+      #cv.pkl --> used to store the CountVectorizer object
+      #tfidf.pkl --> used to store the tfidf object
+      #cv_accuracy.pkl --> used to store accuracy of all models for CountVectorizer technique
+      #tfidf_accuracy.pkl --> used to store accuracy of all models for tfidf technique
+      #model2_cv.pkl --> used to store all models object of CountVectorizer technique
+      #model2_tfidf.pkl --> used to store all models object of tfidf technique

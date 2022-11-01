@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="with=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>Feedback</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='style_feedback.css')}}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/17c067ba5f.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="center">
+         <div class="container">
+            <a class="close-btn fas fa-times" title="close" href={{url_for('index')}}></a>
+            <div class="text">
+               Feedback Form
+            </div>
+            <form name="form1" action="{{ url_for("feedback")}}" method="post">
+               <div class="data">
+                  <label>Email</label>
+                  <input type="text" name="email" placeholder="Enter Email" required>
+               </div>
+               <div class="data">
+                  <label>Password</label>
+                  <input type="password" name="pass" placeholder="Enter Password" required>
+               </div>
+               <div class="text-area">
+                  <label>Type Feedback Here</label>
+                  <textarea id="feedback" name="text_area" rows="4" cols="50" placeholder=" Enter Your Feedback"></textarea>
+               </div>
+               <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit" onclick="myFunction()">Submit</button>
+               </div>
+
+            </form>
+         </div>
+      </div>
+   </body>
+</html>

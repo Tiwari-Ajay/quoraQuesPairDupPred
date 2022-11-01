@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title> QuoraQuestionsPairDuplicacyPrediction </title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/17c067ba5f.js" crossorigin="anonymous"></script>
+</HEAD>
+<BODY>
+    <section class="header">
+        <nav>
+            <a href={{url_for('index')}}> <img src="{{url_for('static', filename='f3.png')}}" /></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href={{url_for('index')}}> Home </a></li>
+                    <li><a href={{url_for('prediction')}}> Prediction </a></li>
+                    <li><a href={{url_for('feedback')}}> FeedBack </a></li>
+                    <li><a href={{url_for('signUp')}}> SignUp </a></li>
+                    <li><a href={{url_for('login')}}> Login </a></li>
+                </ul>
+
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="TextBox">
+            <h1> Quora Questions Pair Duplicacy Prediction</h1>
+             <p>Hi, I'm here to help you about whether questions of Question Pair is Duplicate or not! </p>
+            <a href={{url_for('prediction')}} class="master-btn"> Visit Me for Prediction</a>
+        </div>
+
+    </section>
+    <!-- javascript for toggle and menu-->
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+</BODY>
+</HTML>
